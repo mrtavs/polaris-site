@@ -1,0 +1,18 @@
+---
+interface Props { topic?: string }
+const { topic = 'this thesis' } = Astro.props;
+---
+<aside class="work" aria-labelledby="work-head">
+  <div class="work-inner">
+    <h2 id="work-head">Work with Marc</h2>
+    <p>
+      If you are building, backing or regulating a company in the territory {topic} covers, Marc advises boards
+      and founders on go to market, deals and credibility with banks, regulators and institutions. Advisory and
+      consultancy are contracted through Bluesphere Solutions.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://bluespheresolutions.co.uk/book/">Book a 20 minute call</a>
+      <a class="btn" href="https://bluespheresolutions.co.uk/services/">See how Marc works with companies</a>
+    </div>
+  </div>
+</aside>

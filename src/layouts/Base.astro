@@ -1,0 +1,142 @@
+---
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  extraSchema?: Record<string, unknown>[];
+  ogType?: string;
+}
+
+const { title, description, path, extraSchema = [], ogType = 'website' } = Astro.props;
+const site = 'https://polarisglobal.io';
+const canonical = new URL(path, site).href;
+const fullTitle = path === '/' ? title : `${title} | Polaris Group`;
+
+const PERSON_ID = 'https://marctaverner.com/#person';
+const ORG_ID = 'https://polarisglobal.io/#organization';
+
+const graph = [
+  {
+    '@type': 'Organization',
+    '@id': ORG_ID,
+    name: 'Polaris Group',
+    alternateName: 'Polaris Global',
+    url: `${site}/`,
+    description:
+      'Polaris Group focuses on where value is moving in applied AI, carefully selects start ups for private angel investment and convenes the private and public sectors through the Polaris Council.',
+    founder: { '@id': PERSON_ID, '@type': 'Person', name: 'Marc Taverner', url: 'https://marctaverner.com/' },
+    subOrganization: {
+      '@type': 'Organization',
+      '@id': `${site}/#council`,
+      name: 'Polaris Council',
+      url: `${site}/council/`,
+    },
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${site}/#website`,
+    url: `${site}/`,
+    name: 'Polaris Group',
+    publisher: { '@id': ORG_ID },
+    inLanguage: 'en-GB',
+  },
+  ...extraSchema,
+];
+const schema = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+
+const nav = [
+  { href: '/theses/', label: 'Theses' },
+  { href: '/council/', label: 'Council' },
+  { href: '/archive/', label: 'Archive' },
+  { href: '/contact/', label: 'Contact' },
+];
+const current = (href: string) => path.startsWith(href);
+// Draft builds are noindex. Set PUBLIC_GO_LIVE=true in Netlify only at go live.
+const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {!isLive && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Polaris Group" />
+    <meta property="og:image" content={`${site}/og.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
+    />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+    <script type="application/ld+json" set:html={schema} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="masthead">
+      <div class="wrap masthead-inner">
+        <a class="brand" href="/" aria-label="Polaris Group home">
+          <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 1.5 13.6 10.4 22.5 12 13.6 13.6 12 22.5 10.4 13.6 1.5 12 10.4 10.4Z" />
+          </svg>
+          <span>Polaris Group</span>
+        </a>
+        <nav aria-label="Main">
+          <ul>
+            {nav.map((n) => (
+              <li><a href={n.href} aria-current={current(n.href) ? 'page' : undefined}>{n.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <p class="footer-brand">Polaris Group</p>
+          <p class="footer-desc">
+            Polaris Group focuses on where value is moving in applied AI, carefully selects start ups for private angel
+            investment and convenes the private and public sectors through the Polaris Council.
+          </p>
+        </div>
+        <div>
+          <p class="footer-head">Read</p>
+          <ul>
+            <li><a href="/theses/investing-in-the-harness/">Investing in the Harness</a></li>
+            <li><a href="/theses/agents-of-sovereignty/">Agents of Sovereignty</a></li>
+            <li><a href="/archive/">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-head">Marc Taverner</p>
+          <ul>
+            <li><a href="https://marctaverner.com/">About Marc</a></li>
+            <li><a href="https://bluespheresolutions.co.uk/services/">Advisory through Bluesphere</a></li>
+            <li><a href="https://bluespheresolutions.co.uk/book/">Book a 20 minute call</a></li>
+            <li><a href="https://www.linkedin.com/in/marctaverner/">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap footer-base">
+        <p>London, working globally. <a href="mailto:marc@bluespheresolutions.co.uk">marc@bluespheresolutions.co.uk</a></p>
+        <p><a href="/privacy/">Privacy</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

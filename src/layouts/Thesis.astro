@@ -1,0 +1,64 @@
+---
+import Base from './Base.astro';
+import WorkWithMarc from '../components/WorkWithMarc.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  kicker: string;
+  description: string;
+  path: string;
+  dateLabel: string;
+  datePublished: string;
+  dateModified?: string;
+  pdf?: string;
+  related?: { href: string; label: string }[];
+  topic?: string;
+  archived?: boolean;
+}
+
+const {
+  title, subtitle, kicker, description, path, dateLabel, datePublished,
+  dateModified, pdf, related = [], topic, archived = false,
+} = Astro.props;
+
+const url = new URL(path, 'https://polarisglobal.io').href;
+const article = {
+  '@type': 'Article',
+  '@id': `${url}#article`,
+  headline: subtitle ? `${title}: ${subtitle}` : title,
+  description,
+  url,
+  mainEntityOfPage: url,
+  datePublished,
+  dateModified: dateModified ?? datePublished,
+  inLanguage: 'en-GB',
+  author: { '@id': 'https://marctaverner.com/#person', '@type': 'Person', name: 'Marc Taverner', url: 'https://marctaverner.com/' },
+  publisher: { '@id': 'https://polarisglobal.io/#organization' },
+  isPartOf: { '@id': 'https://polarisglobal.io/#website' },
+  ...(pdf ? { encoding: { '@type': 'MediaObject', encodingFormat: 'application/pdf', contentUrl: new URL(pdf, 'https://polarisglobal.io').href } } : {}),
+  ...(archived ? { creativeWorkStatus: 'Archived' } : {}),
+};
+---
+<Base title={subtitle ? `${title}: ${subtitle}` : title} description={description} path={path} extraSchema={[article]} ogType="article">
+  <article>
+    <header class="article-head wrap">
+      <p class="kicker">{kicker}</p>
+      <h1>{title}</h1>
+      {subtitle && <p class="subtitle">{subtitle}</p>}
+      <p class="byline">
+        <span>By <a href="https://marctaverner.com/" rel="author">Marc Taverner</a></span>
+        <span>{dateLabel}</span>
+      </p>
+      <div class="article-tools">
+        {pdf && <a class="btn" href={pdf} download>Download the PDF</a>}
+        {related.map((r) => <a class="btn" href={r.href}>{r.label}</a>)}
+      </div>
+      <slot name="note" />
+    </header>
+    <div class="article-body">
+      <slot />
+    </div>
+  </article>
+  <WorkWithMarc topic={topic} />
+</Base>

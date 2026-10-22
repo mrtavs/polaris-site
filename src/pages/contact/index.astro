@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Contact"
+  description="Contact Polaris Group about the theses, the Polaris Council or a start up building in applied AI governance, evaluation, identity or sovereignty."
+  path="/contact/"
+>
+  <header class="article-head wrap">
+    <h1>Contact</h1>
+    <p class="lede" style="margin-top:20px">
+      Write about the theses, the Council, or a company you are building. Marc reads every message and replies within one
+      working day.
+    </p>
+  </header>
+  <section class="wrap" style="padding-bottom:24px">
+    <form class="form" name="polaris-contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="company-url">
+      <input type="hidden" name="form-name" value="polaris-contact" />
+      <p class="hidden"><label>Leave this empty <input name="company-url" tabindex="-1" autocomplete="off" /></label></p>
+      <label>Your name <input name="name" autocomplete="name" required /></label>
+      <label>Email <input type="email" name="email" autocomplete="email" required /></label>
+      <label>Organisation <input name="organisation" autocomplete="organization" /></label>
+      <label>What is this about?
+        <select name="topic">
+          <option>A start up looking for angel investment</option>
+          <option>The Polaris Council</option>
+          <option>The theses</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>Message <textarea name="message" required></textarea></label>
+      <p class="small">We use your details only to reply to you. See the <a href="/privacy/">privacy notice</a>.</p>
+      <button class="btn primary" type="submit">Send message</button>
+    </form>
+    <p class="small" style="margin-top:28px">
+      Prefer email? <a href="mailto:marc@bluespheresolutions.co.uk">marc@bluespheresolutions.co.uk</a>.
+      For advisory or board work, <a href="https://bluespheresolutions.co.uk/book/">book a 20 minute call</a>.
+    </p>
+  </section>
+</Base>

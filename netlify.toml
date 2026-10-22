@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Draft only: keep every deploy out of search indexes until go live.
+# Remove this block (and public/robots.txt disallow) at go live.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
