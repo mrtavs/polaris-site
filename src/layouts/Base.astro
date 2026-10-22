@@ -1,4 +1,9 @@
 ---
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/newsreader/opsz-italic.css';
+import '@fontsource/instrument-sans/400.css';
+import '@fontsource/instrument-sans/500.css';
+import '@fontsource/instrument-sans/600.css';
 import '../styles/site.css';
 
 interface Props {
@@ -73,12 +78,6 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
     <meta property="og:image" content={`${site}/og.png`} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
-    />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
     <script type="application/ld+json" set:html={schema} />
   </head>

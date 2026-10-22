@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+const council = {
+  '@type': 'Organization',
+  '@id': 'https://polarisglobal.io/#council',
+  name: 'Polaris Council',
+  url: 'https://polarisglobal.io/council/',
+  parentOrganization: { '@id': 'https://polarisglobal.io/#organization' },
+  founder: { '@id': 'https://marctaverner.com/#person' },
+  event: {
+    '@type': 'Event',
+    name: 'Polaris Council convening, Westminster',
+    startDate: '2026-04-23',
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: { '@type': 'Place', name: "Speaker's House, Palace of Westminster", address: { '@type': 'PostalAddress', addressLocality: 'London', addressCountry: 'GB' } },
+    organizer: { '@id': 'https://polarisglobal.io/#organization' },
+  },
+};
+---
+<Base
+  title="Polaris Council"
+  description="The Polaris Council convenes the private and public sectors on what applied AI means for people, companies and governments. It convened on St George's Day, 23 April 2026, at Speaker's House, Westminster."
+  path="/council/"
+  extraSchema={[council]}
+>
+  <section class="hero night">
+    <div class="wrap">
+      <h1 style="max-width:16ch">The Polaris Council</h1>
+      <p class="lede" style="margin-top:24px">
+        The Council brings the companies building applied AI into the same room as the people writing the rules they will
+        have to prove they follow.
+      </p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="why-h">
+    <div class="wrap band-head">
+      <div><h2 id="why-h">Why it exists</h2></div>
+      <div>
+        <p>
+          Applied AI is changing who does the work, who keeps the value and who carries the risk when an agent gets
+          something wrong. Those questions are being settled now, in contracts, procurement rules and regulation, often
+          before founders and policymakers have spoken to each other.
+        </p>
+        <p>
+          The Council exists to have that conversation early and in private: founders, investors and enterprise buyers
+          alongside parliamentarians, regulators and officials, working through what governance, evidence and
+          sovereignty need to look like in practice.
+        </p>
+        <p>
+          It is not a lobbying body or a trade association. It is a convening, and its work is informed by the two Polaris
+          theses, <a href="/theses/investing-in-the-harness/">Investing in the Harness</a> and
+          <a href="/theses/agents-of-sovereignty/">Agents of Sovereignty</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="first-h">
+    <div class="wrap band-head">
+      <div><h2 id="first-h">The first convening</h2></div>
+      <div>
+        <p class="lede">The Council convened on St George's Day, 23 April 2026, at Speaker's House, Westminster.</p>
+        <p>Westminster was the first convening. Further convenings will follow, each on the same terms: private, small and focused on what needs to be decided next.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="themes-h">
+    <div class="wrap band-head">
+      <div><h2 id="themes-h">What the Council works on</h2></div>
+      <ul class="principles">
+        <li>What evidence a regulator, auditor or insurer will accept when an agent acts on a company's behalf.</li>
+        <li>What people, companies and states can authorise, refuse, inspect and take with them.</li>
+        <li>How European and UK rules on data, AI and cloud switching change where value sits.</li>
+        <li>Where agents settling value on a shared record genuinely needs one.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="join-h">
+    <div class="wrap band-head">
+      <div><h2 id="join-h">Take part</h2></div>
+      <div>
+        <p>Attendance is by invitation. If your company, institution or office should be in the room, tell us why.</p>
+        <form class="form" name="council-interest" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="company-url">
+          <input type="hidden" name="form-name" value="council-interest" />
+          <p class="hidden"><label>Leave this empty <input name="company-url" tabindex="-1" autocomplete="off" /></label></p>
+          <label>Your name <input name="name" autocomplete="name" required /></label>
+          <label>Role and organisation <input name="role" required /></label>
+          <label>Email <input type="email" name="email" autocomplete="email" required /></label>
+          <label>Why you should be in the room <textarea name="message" required></textarea></label>
+          <p class="small">We use your details only to reply to you. See the <a href="/privacy/">privacy notice</a>.</p>
+          <button class="btn primary" type="submit">Send request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>

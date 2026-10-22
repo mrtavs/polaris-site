@@ -1,0 +1,23 @@
+# Old Base44 routes to the new structure (301). Kept for every URL the old site published.
+/Home                          /                                               301
+/Thesis                        /archive/agents-of-sovereignty-2025/            301
+/ThesisAUBI                    /archive/agentic-universal-basic-income/        301
+/AgenticUniversalBasicIncome   /archive/what-is-agentic-universal-basic-income/ 301
+/TheFutureOfAgenticEconomies   /archive/the-future-of-agentic-economies/       301
+/SelfSovereignIdentityAIAgents /archive/self-sovereign-identity-and-ai-agents/ 301
+/Insights                      /theses/                                        301
+/PolarisVision                 https://marctaverner.com/                       301
+/PolarisFund                   /                                               301
+/PolarisCouncil                /council/                                       301
+/AboutUs                       https://marctaverner.com/                       301
+/ContactUs                     /contact/                                       301
+/Events                        /council/                                       301
+/EventPolarisCouncil2026       /council/                                       301
+/EventPolarisCouncilLaunch     /council/                                       301
+/EventPolarisCouncilLaunchV2   /council/                                       301
+/PrivacyPolicy                 /privacy/                                       301
+/CookiePolicy                  /privacy/                                       301
+/TermsAndConditions            /privacy/                                       301
+/Sitemap                       /sitemap-index.xml                              301
+/thesis                        /archive/agents-of-sovereignty-2025/            301
+/insights                      /theses/                                        301

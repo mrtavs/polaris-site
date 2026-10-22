@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import ArchiveNote from '../../components/ArchiveNote.astro';
+
+const items = [
+  { href: '/archive/agents-of-sovereignty-2025/', role: 'Thesis, 2025', title: 'Agents of Sovereignty: enabling data privacy, monetization, and autonomy in the post quantum agentic economy', text: 'The original thesis: agent identity through self sovereign credentials, privacy by design, personal data monetisation and quantum resistant identity.' },
+  { href: '/archive/agentic-universal-basic-income/', role: 'Research paper, 2025', title: 'Agents of Sovereignty: architecting a post labor economy through data monetization, privacy, and AI delegation', text: 'The Agentic Universal Basic Income paper: personal AI agents earning income for individuals from their own data.' },
+  { href: '/archive/what-is-agentic-universal-basic-income/', role: 'Explainer, 2025', title: 'What is Agentic Universal Basic Income (AUBI)?', text: 'A short explanation of the AUBI model and the infrastructure it assumed.' },
+  { href: '/archive/the-future-of-agentic-economies/', role: 'Article, 2025', title: 'The future of agentic economies', text: 'How AI agents, self sovereign identity and blockchain settlement were expected to reshape economic participation.' },
+  { href: '/archive/self-sovereign-identity-and-ai-agents/', role: 'Article, 2025', title: 'Self sovereign identity and AI agents', text: 'Why identity control was treated as the anchor for agent delegation.' },
+];
+---
+<Base
+  title="Archive"
+  description="The original 2025 Agents of Sovereignty thesis and the Agentic Universal Basic Income papers by Marc Taverner, kept on record with a note on what changed."
+  path="/archive/"
+>
+  <header class="article-head wrap">
+    <h1>Archive</h1>
+    <p class="lede" style="margin-top:20px">The first version of the thinking behind Polaris, as published in 2025.</p>
+    <ArchiveNote />
+  </header>
+  <section class="wrap" style="padding-bottom:24px">
+    <ul class="thesis-list">
+      {items.map((i) => (
+        <li>
+          <p class="role">{i.role}</p>
+          <h3><a href={i.href}>{i.title}</a></h3>
+          <p>{i.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
