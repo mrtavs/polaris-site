@@ -22,8 +22,6 @@ const robots = live
       '',
       'User-agent: *',
       'Allow: /',
-      'Disallow: /contact/thanks/',
-      'Disallow: /fund/thanks/',
       '',
       `Sitemap: ${site}/sitemap-index.xml`,
       '',
@@ -34,11 +32,14 @@ writeFileSync(join(DIST, 'robots.txt'), robots);
 // Headers
 const headers = [
   '/*',
-  live ? '  X-Robots-Tag: index, follow, max-image-preview:large' : '  X-Robots-Tag: noindex, nofollow',
+  ...(live ? [] : ['  X-Robots-Tag: noindex, nofollow']),
   '  Referrer-Policy: strict-origin-when-cross-origin',
   '  X-Content-Type-Options: nosniff',
   '  Permissions-Policy: camera=(), microphone=(), geolocation=()',
   '',
+  // Thank you pages carry a noindex meta; the header covers crawlers that skip HTML.
+  '/contact/thanks/*', '  X-Robots-Tag: noindex', '',
+  '/fund/thanks/*', '  X-Robots-Tag: noindex', '',
   '/*.md', '  Content-Type: text/markdown; charset=utf-8', '',
   '/llms.txt', '  Content-Type: text/plain; charset=utf-8', '',
   '/llms-full.txt', '  Content-Type: text/plain; charset=utf-8', '',
@@ -47,6 +48,10 @@ const headers = [
   '/fonts/*', '  Cache-Control: public, max-age=31536000, immutable', '',
 ].join('\n');
 writeFileSync(join(DIST, '_headers'), headers + '\n');
+
+// IndexNow key file (the deploy-succeeded function pings api.indexnow.org with every sitemap URL).
+const INDEXNOW_KEY = 'd225142c66ac2deb313c58cfabb8f555';
+if (live) writeFileSync(join(DIST, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
 
 // Markdown twins: /x/y/ -> /x/y.md, / -> /index.md (main content only)
 const walk = (d) => readdirSync(d).flatMap((f) => {

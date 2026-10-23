@@ -1,6 +1,16 @@
 ---
 import { LEGAL_URL } from '../../config/legal';
 import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import { faqSchema } from '../../config/faq';
+// Restates what this page already says, in question form (no new claims).
+const faq = [
+  { q: 'What is the Polaris Council?', a: 'The Polaris Council brings the companies building applied AI into the same room as the people writing the rules they will have to prove they follow. It convenes founders, investors and enterprise buyers alongside parliamentarians, regulators and officials, in private, to work through what governance, evidence and sovereignty need to look like in practice.' },
+  { q: 'When and where did the Polaris Council first meet?', a: "The Council convened on St George's Day, 23 April 2026, at Speaker's House, Westminster." },
+  { q: 'Is the Polaris Council a lobbying body or trade association?', a: 'No. It is a convening, and its work is informed by the two Polaris theses, Investing in the Harness and Agents of Sovereignty.' },
+  { q: 'What does the Polaris Council work on?', a: "What evidence a regulator, auditor or insurer will accept when an agent acts on a company's behalf; what people, companies and states can authorise, refuse, inspect and take with them; how European and UK rules on data, AI and cloud switching change where value sits; and where agents settling value on a shared record genuinely need one." },
+  { q: 'How can I take part in the Polaris Council?', a: 'Attendance is by invitation. If your company, institution or office should be in the room, use the form on this page to say why.' },
+];
 const council = {
   '@type': 'Organization',
   '@id': 'https://polarisglobal.io/#council',
@@ -23,7 +33,7 @@ const council = {
   title="Polaris Council"
   description="The Polaris Council brings the private and public sectors together on applied AI. It convened on 23 April 2026 at Speaker's House, Westminster."
   path="/council/"
-  extraSchema={[council]}
+  extraSchema={[council, faqSchema('https://polarisglobal.io/council/', faq)]}
 >
   <section class="hero night">
     <div class="wrap">
@@ -79,6 +89,8 @@ const council = {
       </ul>
     </div>
   </section>
+
+  <Faq items={faq} />
 
   <section class="band" aria-labelledby="join-h">
     <div class="wrap band-head">

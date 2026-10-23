@@ -1,11 +1,21 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { LEGAL_URL } from '../../config/legal';
+import Faq from '../../components/Faq.astro';
+import { faqSchema } from '../../config/faq';
+// Restates what this page and the theses already say, in question form (no new claims).
+const faq = [
+  { q: 'What does the Polaris Fund invest in?', a: 'Polaris carefully selects start ups for private angel investment. It backs companies that make the AI harness portable, provable or protected, and that sell to someone who is obliged to buy: agent governance, identity and audit; evaluation and observability infrastructure; digital identity wallet middleware; post quantum crypto agility; confidential computing and attested inference; and European sovereign AI infrastructure.' },
+  { q: 'Who is behind the Polaris Fund?', a: 'Polaris Group was founded by Marc Taverner, a go to market and board advisor to web3, digital asset, fintech and AI companies, and is owned by Bluesphere Solutions Ltd.' },
+  { q: 'Why does Polaris focus on the harness rather than the models?', a: 'The reasoning is set out in the Polaris thesis, Investing in the Harness: the model is not the asset, and value moves to the companies that own the harness around it and sell to an obligation rather than a preference.' },
+  { q: 'How can a founder submit a company to Polaris?', a: 'Use the form on this page. It is for founders and is not an offer of, or invitation to make, any investment.' },
+];
 ---
 <Base
   title="Polaris Fund"
   description="Polaris selects start ups for private angel investment: companies that make the AI harness portable, provable or protected. Submit your company."
   path="/fund/"
+  extraSchema={[faqSchema('https://polarisglobal.io/fund/', faq)]}
 >
   <header class="article-head wrap">
     <h1>Polaris Fund</h1>
@@ -31,6 +41,8 @@ import { LEGAL_URL } from '../../config/legal';
       </p>
     </div>
   </section>
+
+  <Faq items={faq} />
 
   <section class="band" aria-labelledby="submit-h">
     <div class="wrap band-head">

@@ -1,0 +1,18 @@
+---
+// Answer first questions in the words buyers and AI tools use. Pair with faqSchema() in the page's extraSchema.
+interface Props { items: { q: string; a: string }[]; heading?: string; id?: string }
+const { items, heading = 'Questions', id = 'faq-h' } = Astro.props;
+---
+<section class="band" aria-labelledby={id}>
+  <div class="wrap band-head">
+    <div><h2 id={id}>{heading}</h2></div>
+    <div>
+      {items.map((it) => (
+        <div style="margin-bottom:22px">
+          <h3 style="margin:0 0 6px">{it.q}</h3>
+          <p style="margin:0">{it.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

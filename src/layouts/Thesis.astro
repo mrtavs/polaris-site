@@ -26,6 +26,15 @@ const {
 } = Astro.props;
 
 const url = new URL(path, 'https://polarisglobal.io').href;
+// Google wants a full ISO 8601 datetime with time zone; dates are given as YYYY-MM-DD (London time).
+const withZone = (d: string) => {
+  if (/T\d\d:/.test(d)) return d;
+  const probe = new Date(`${d}T12:00:00Z`);
+  const london = new Date(probe.toLocaleString('en-US', { timeZone: 'Europe/London' }));
+  const utc = new Date(probe.toLocaleString('en-US', { timeZone: 'UTC' }));
+  const off = Math.round((london.getTime() - utc.getTime()) / 3600000);
+  return `${d}T09:00:00+0${off}:00`;
+};
 const ogFile = path.startsWith('/theses/investing-in-the-harness/') ? '/og-harness.png'
   : path.startsWith('/theses/agents-of-sovereignty/') ? '/og-sovereignty.png'
   : path.startsWith('/archive/') ? '/og-archive.png' : '/og.png';
@@ -45,8 +54,8 @@ const article = {
   description,
   url,
   mainEntityOfPage: url,
-  datePublished,
-  dateModified: dateModified ?? datePublished,
+  datePublished: withZone(datePublished),
+  dateModified: withZone(dateModified ?? datePublished),
   inLanguage: 'en-GB',
   image: { '@type': 'ImageObject', url: `https://polarisglobal.io${ogFile}`, width: 1200, height: 630 },
   author: { '@id': 'https://marctaverner.com/#person', '@type': 'Person', name: 'Marc Taverner', url: 'https://marctaverner.com/' },
@@ -56,7 +65,7 @@ const article = {
   ...(archived ? { creativeWorkStatus: 'Archived' } : {}),
 };
 ---
-<Base title={seoTitle ?? (subtitle ? `${title}: ${subtitle}` : title)} description={description} path={path} extraSchema={[article, breadcrumb]} ogType="article">
+<Base updated={dateModified ?? datePublished} title={seoTitle ?? (subtitle ? `${title}: ${subtitle}` : title)} description={description} path={path} extraSchema={[article, breadcrumb]} ogType="article">
   <article>
     <header class="article-head wrap">
       <p class="kicker">{kicker}</p>

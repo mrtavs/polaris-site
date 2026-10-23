@@ -12,9 +12,15 @@ interface Props {
   ogImage?: string;
   ogImageAlt?: string;
   noCanonical?: boolean;
+  noindex?: boolean;
+  updated?: string;
 }
 
-const { title, description, path, extraSchema = [], ogType = 'website', darkHeader = false } = Astro.props;
+const { title, description, path, extraSchema = [], ogType = 'website', darkHeader = false, noindex = false } = Astro.props;
+// Site wide freshness date: change it whenever page content changes (shown in the footer, used as WebPage dateModified).
+const SITE_UPDATED = '2026-10-23';
+const updated = Astro.props.updated ?? SITE_UPDATED;
+const updatedText = new Date(`${updated}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/London' });
 const OG_BY_PATH: [string, string, string][] = [
   ['/theses/investing-in-the-harness/', '/og-harness.png', 'Investing in the Harness, the Polaris investment thesis by Marc Taverner'],
   ['/theses/agents-of-sovereignty/', '/og-sovereignty.png', 'Agents of Sovereignty, an essay by Marc Taverner, 2026 to 2031'],
@@ -39,6 +45,7 @@ const graph = [
     name: 'Polaris Group',
     alternateName: 'Polaris Global',
     url: `${site}/`,
+    logo: `${site}/icon-512.png`,
     description:
       'Polaris Group focuses on where value is moving in applied AI, carefully selects start ups for private angel investment and convenes the private and public sectors through the Polaris Council.',
     founder: { '@id': PERSON_ID },
@@ -66,6 +73,16 @@ const graph = [
   },
   ...extraSchema,
 ];
+// Breadcrumbs on every inner page that does not bring its own (Site Standards Checklist v1).
+if (path !== '/' && !noindex && !Astro.props.noCanonical && !extraSchema.some((n) => n['@type'] === 'BreadcrumbList')) {
+  const parts = path.split('/').filter(Boolean);
+  const label = (seg: string) => seg.charAt(0).toUpperCase() + seg.slice(1).replace(/-/g, ' ');
+  const items = [['Home', '/'], ...parts.map((seg, i) => [i === parts.length - 1 ? title : label(seg), '/' + parts.slice(0, i + 1).join('/') + '/'])];
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map(([name, href], i) => ({ '@type': 'ListItem', position: i + 1, name, item: new URL(href, site).href })),
+  });
+}
 const schema = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 
 const nav = [
@@ -89,9 +106,9 @@ const isLive = import.meta.env.PUBLIC_INDEXABLE === 'true' || import.meta.env.PU
     <link rel="preload" href="/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="description" content={description} />
     {!Astro.props.noCanonical && <link rel="canonical" href={canonical} />}
-    {!Astro.props.noCanonical && <link rel="alternate" type="text/markdown" href={path === '/' ? '/index.md' : path.replace(/\/$/, '.md')} />}
+ {!Astro.props.noCanonical && !noindex && <link rel="alternate" type="text/markdown" href={path === '/' ? '/index.md' : path.replace(/\/$/, '.md')} />}
     <meta name="author" content="Marc Taverner" />
-    {isLive
+    {isLive && !noindex
       ? <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       : <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content="#0b1626" />
@@ -182,6 +199,7 @@ const isLive = import.meta.env.PUBLIC_INDEXABLE === 'true' || import.meta.env.PU
       </div>
       <div class="wrap footer-base">
         <p>London, working globally. <a href="mailto:marc@bluespheresolutions.co.uk">marc@bluespheresolutions.co.uk</a></p>
+        <p>Last updated <time datetime={updated}>{updatedText}</time></p>
         <p>Polaris Group is owned by {LEGAL_OWNER}, company {LEGAL_COMPANY_NO}. <a href={LEGAL_URL}>Legal and privacy</a></p>
       </div>
     </footer>
