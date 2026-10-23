@@ -7,3 +7,12 @@ Static Astro site for Polaris Group, replacing the Base44 build at go live.
 - Theses text: `src/content/harness.md` (V3) and `src/content/sovereignty.md` (V2), reproduced exactly from the final Google Docs of 23 October 2026 (V3 1-mjm6U7BCenOKxmr4qCbT-dXmaOPSHaUjKv0L717wNw, V2 1XNbfEBMN11OEmUwtzW6vDU4NAxQrExNlVf7uHAVL3Mg). Do not edit the text here; Marc edits the Google Doc. PDFs in `public/pdf/` are exports of those Docs.
 - Old Base44 routes: `public/_redirects`.
 - Research behind the refresh: `docs/`.
+
+## Go live checklist (agreed with Marc, 23 October 2026)
+
+Polaris goes live only after the new Bluesphere site is live, because the legal and privacy link points to bluespheresolutions.co.uk/privacy/.
+
+1. Check bluespheresolutions.co.uk/privacy/, /book/ and /services/ load on the live Bluesphere site.
+2. In src/config/legal.ts set BOOKING_URL to https://bluespheresolutions.co.uk/book/ and ADVISORY_URL to https://bluespheresolutions.co.uk/services/. Update the same two links in public/llms.txt.
+3. Set PUBLIC_GO_LIVE=true in Netlify. This switches the robots meta tag, robots.txt and X-Robots-Tag header to allow search and AI crawlers.
+4. Attach the polarisglobal.io domain and change DNS only with Marc's explicit yes, together with the SEO and AI Search workstream.
