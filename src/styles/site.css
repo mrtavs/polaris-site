@@ -239,7 +239,7 @@ article .article-head h1 { max-width: none; }
 @media (max-width: 760px) {
   .hero-night { min-height: 0; display: block; padding-top: 0; padding-bottom: 56px; }
   .hero-night .chart { position: relative; z-index: -2; display: block; width: 150vw; max-width: none; top: auto; right: auto; left: 50%; transform: translateX(-50%); margin-top: -38vw; margin-bottom: -46vw; }
-  .hero-night::before { background: linear-gradient(180deg, rgba(11,22,38,0) 0%, rgba(11,22,38,0) 30%, rgba(11,22,38,.85) 58%, #0b1626 72%); }
+  .hero-night::before { background: linear-gradient(180deg, rgba(11,22,38,0) 0%, rgba(11,22,38,0) 26%, rgba(11,22,38,.9) 40%, #0b1626 48%); }
   .hero-night h1 { max-width: 12ch; }
 }
 

@@ -1,0 +1,113 @@
+---
+// Home hero graphic: "the harness, engraved". A guilloché rosette (security print engraving) of six bands around
+// a fixed point. Each band is one layer of the harness from Investing in the Harness. The engraving is drawn on a
+// canvas at the device's pixel density (sharp on any screen, ~3 KB of code); labels and rings are SVG.
+const C = 600; // centre in a 1200 unit square
+const layers = [
+  { name: 'Context', r: 128, a: 300, key: false },
+  { name: 'Policy', r: 196, a: 303, key: false },
+  { name: 'Process', r: 270, a: 306, key: false },
+  { name: 'Evaluation', r: 348, a: 309, key: true },
+  { name: 'Feedback', r: 426, a: 312, key: false },
+  { name: 'Identity', r: 506, a: 315, key: true },
+];
+// a path for each label ring, starting at the label's angle so textPath begins there
+const ringPath = (r: number, a: number) => {
+  const t0 = ((a - 90) * Math.PI) / 180;
+  const t1 = t0 + Math.PI * 0.45;
+  const p = (t: number) => `${(C + r * Math.cos(t)).toFixed(1)} ${(C + r * Math.sin(t)).toFixed(1)}`;
+  return `M${p(t0)} A${r} ${r} 0 0 1 ${p(t1)}`;
+};
+---
+<figure class="harness" aria-label="The harness: six layers around a model">
+  <div class="harness-stage">
+    <canvas class="harness-canvas" width="1200" height="1200" aria-hidden="true"></canvas>
+    <svg class="harness-overlay" viewBox="0 0 1200 1200" aria-hidden="true">
+      <defs>
+        <radialGradient id="hcore" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#fff3d6" stop-opacity=".9" />
+          <stop offset=".18" stop-color="#e3c78f" stop-opacity=".35" />
+          <stop offset="1" stop-color="#cfae6d" stop-opacity="0" />
+        </radialGradient>
+        {layers.map((l, i) => <path id={`hl${i}`} d={ringPath(l.r, l.a)} fill="none" />)}
+      </defs>
+      {layers.map((l) => (
+        <circle cx={C} cy={C} r={l.r} fill="none" stroke="#cfae6d" stroke-opacity=".42" stroke-width=".7" />
+      ))}
+      <circle cx={C} cy={C} r="566" fill="none" stroke="#cfae6d" stroke-opacity=".55" stroke-width="1" />
+      <circle cx={C} cy={C} r="574" fill="none" stroke="#cfae6d" stroke-opacity=".25" stroke-width=".6" />
+      {layers.map((l, i) => (
+        <text class={l.key ? "harness-label key" : "harness-label"} dy="-7"><textPath href={`#hl${i}`}>{l.name}</textPath></text>
+      ))}
+      <circle cx={C} cy={C} r="64" fill="url(#hcore)" />
+      <path d={`M${C} ${C - 30}L${C + 4} ${C - 4}L${C + 30} ${C}L${C + 4} ${C + 4}L${C} ${C + 30}L${C - 4} ${C + 4}L${C - 30} ${C}L${C - 4} ${C - 4}Z`} fill="#fbf0d2" />
+      <circle cx={C} cy={C} r="2.4" fill="#ffffff" />
+    </svg>
+  </div>
+  <figcaption class="harness-caption">The harness: six layers around a model</figcaption>
+</figure>
+
+<script>
+  // Guilloché bands: families of phase shifted curves r(t) = R + A sin(k t + p) + B sin(m t - p).
+  const bands = [
+    // Context, Policy, Process, Evaluation, Feedback, Identity. Evaluation and Identity are the investable layers
+    // in the thesis, so they are engraved in brighter brass; the others recede in silver.
+    { R: 92, A: 26, k: 9, B: 6, m: 27, n: 30, c: '170,186,206', o: 0.11 },
+    { R: 162, A: 22, k: 14, B: 5, m: 42, n: 34, c: '170,186,206', o: 0.1 },
+    { R: 233, A: 24, k: 19, B: 5, m: 57, n: 38, c: '170,186,206', o: 0.1 },
+    { R: 309, A: 24, k: 24, B: 5, m: 72, n: 42, c: '222,190,126', o: 0.2 },
+    { R: 387, A: 25, k: 29, B: 5, m: 87, n: 46, c: '170,186,206', o: 0.09 },
+    { R: 466, A: 27, k: 34, B: 6, m: 102, n: 50, c: '222,190,126', o: 0.17 },
+  ];
+  function draw(cv: HTMLCanvasElement) {
+    const css = cv.getBoundingClientRect().width || 1200;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const px = Math.round(css * dpr);
+    cv.width = px; cv.height = px;
+    const ctx = cv.getContext('2d');
+    if (!ctx) return;
+    const s = px / 1200;
+    ctx.setTransform(s, 0, 0, s, 0, 0);
+    ctx.clearRect(0, 0, 1200, 1200);
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.lineWidth = (0.5 * 1200) / css; // about 0.55 css px at any size
+    const steps = 1440;
+    for (const b of bands) {
+      ctx.strokeStyle = `rgba(${b.c},${b.o})`;
+      for (let j = 0; j < b.n; j++) {
+        const p = (j / b.n) * 2 * Math.PI;
+        ctx.beginPath();
+        for (let i = 0; i <= steps; i++) {
+          const t = (i / steps) * 2 * Math.PI;
+          const r = b.R + b.A * Math.sin(b.k * t + p) + b.B * Math.sin(b.m * t - 2 * p);
+          const x = 600 + r * Math.cos(t), y = 600 + r * Math.sin(t);
+          i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+        }
+        ctx.stroke();
+      }
+    }
+  }
+  const cv = document.querySelector<HTMLCanvasElement>('.harness-canvas');
+  if (cv) {
+    draw(cv);
+    let t: number | undefined;
+    window.addEventListener('resize', () => { clearTimeout(t); t = window.setTimeout(() => draw(cv), 200); });
+  }
+</script>
+
+<style>
+  .harness { margin: 0; position: absolute; z-index: -2; pointer-events: none;
+    width: clamp(820px, 78vw, 1220px); top: 50%; right: clamp(-330px, -17vw, -150px); transform: translateY(-50%); }
+  .harness-stage { position: relative; width: 100%; aspect-ratio: 1; }
+  .harness-canvas, .harness-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .harness-canvas { animation: harness-turn 600s linear infinite; }
+  @keyframes harness-turn { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .harness-canvas { animation: none; } }
+  .harness-label { font: 500 13px 'Instrument Sans', system-ui, sans-serif; fill: #a9b6c6; letter-spacing: 0.08em; }
+  .harness-label.key { fill: #e8cb8e; font-weight: 600; }
+  .harness-caption { position: absolute; left: 18%; bottom: 9%; font: 400 0.8rem 'Instrument Sans', system-ui, sans-serif; color: #8e9bab; letter-spacing: 0.02em; }
+  @media (max-width: 760px) {
+    .harness { position: relative; width: 150vw; top: auto; right: auto; left: 50%; transform: translateX(-50%); margin-top: -40vw; margin-bottom: -14vw; }
+    .harness-caption { display: none; }
+  }
+</style>
