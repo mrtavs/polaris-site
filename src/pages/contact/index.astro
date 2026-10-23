@@ -1,5 +1,5 @@
 ---
-import { LEGAL_URL } from '../../config/legal';
+import { LEGAL_URL, BOOKING_URL } from '../../config/legal';
 import Base from '../../layouts/Base.astro';
 ---
 <Base
@@ -35,7 +35,7 @@ import Base from '../../layouts/Base.astro';
     </form>
     <p class="small" style="margin-top:28px">
       Prefer email? <a href="mailto:marc@bluespheresolutions.co.uk">marc@bluespheresolutions.co.uk</a>.
-      For advisory or board work, <a href="https://bluespheresolutions.co.uk/book/">book a 20 minute call</a>.
+      For advisory or board work, <a href={BOOKING_URL} target="_blank" rel="noopener">book a 20 minute call</a>.
     </p>
   </section>
 </Base>

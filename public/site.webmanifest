@@ -1,0 +1,16 @@
+{
+  "name": "Polaris Group",
+  "short_name": "Polaris",
+  "description": "Polaris Group focuses on where value is moving in applied AI, carefully selects start ups for private angel investment and convenes the private and public sectors through the Polaris Council.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "lang": "en-GB",
+  "background_color": "#0b1626",
+  "theme_color": "#0b1626",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

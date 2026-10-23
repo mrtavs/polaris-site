@@ -1,3 +1,0 @@
-# DRAFT: blocks all crawlers until go live. Replace at go live with the live robots.txt.
-User-agent: *
-Disallow: /

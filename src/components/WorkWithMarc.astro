@@ -1,4 +1,5 @@
 ---
+import { BOOKING_URL, ADVISORY_URL } from '../config/legal';
 interface Props { topic?: string }
 const { topic = 'this thesis' } = Astro.props;
 ---
@@ -11,8 +12,8 @@ const { topic = 'this thesis' } = Astro.props;
       consultancy are contracted through Bluesphere Solutions.
     </p>
     <div class="actions">
-      <a class="btn primary" href="https://bluespheresolutions.co.uk/book/">Book a 20 minute call</a>
-      <a class="btn" href="https://bluespheresolutions.co.uk/services/">See how Marc works with companies</a>
+      <a class="btn primary" href={BOOKING_URL} target="_blank" rel="noopener">Book a 20 minute call</a>
+      <a class="btn" href={ADVISORY_URL}>See how Marc works with companies</a>
     </div>
   </div>
 </aside>

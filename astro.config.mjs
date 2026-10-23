@@ -5,5 +5,5 @@ export default defineConfig({
   site: 'https://polarisglobal.io',
   trailingSlash: 'always',
   build: { format: 'directory' },
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/thanks/') })],
 });

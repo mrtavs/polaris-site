@@ -25,6 +25,17 @@ const {
 } = Astro.props;
 
 const url = new URL(path, 'https://polarisglobal.io').href;
+const ogFile = path.startsWith('/theses/investing-in-the-harness/') ? '/og-harness.png'
+  : path.startsWith('/theses/agents-of-sovereignty/') ? '/og-sovereignty.png'
+  : path.startsWith('/archive/') ? '/og-archive.png' : '/og.png';
+const crumbs = path.startsWith('/archive/')
+  ? [['Home', '/'], ['Archive', '/archive/']] : [['Home', '/'], ['Theses', '/theses/']];
+const breadcrumb = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [...crumbs, [title, path]].map(([name, href], i) => ({
+    '@type': 'ListItem', position: i + 1, name, item: new URL(href, 'https://polarisglobal.io').href,
+  })),
+};
 const article = {
   '@type': 'Article',
   '@id': `${url}#article`,
@@ -35,6 +46,7 @@ const article = {
   datePublished,
   dateModified: dateModified ?? datePublished,
   inLanguage: 'en-GB',
+  image: { '@type': 'ImageObject', url: `https://polarisglobal.io${ogFile}`, width: 1200, height: 630 },
   author: { '@id': 'https://marctaverner.com/#person', '@type': 'Person', name: 'Marc Taverner', url: 'https://marctaverner.com/' },
   publisher: { '@id': 'https://polarisglobal.io/#organization' },
   isPartOf: { '@id': 'https://polarisglobal.io/#website' },
@@ -42,7 +54,7 @@ const article = {
   ...(archived ? { creativeWorkStatus: 'Archived' } : {}),
 };
 ---
-<Base title={subtitle ? `${title}: ${subtitle}` : title} description={description} path={path} extraSchema={[article]} ogType="article">
+<Base title={subtitle ? `${title}: ${subtitle}` : title} description={description} path={path} extraSchema={[article, breadcrumb]} ogType="article">
   <article>
     <header class="article-head wrap">
       <p class="kicker">{kicker}</p>
