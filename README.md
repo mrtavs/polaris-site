@@ -8,13 +8,14 @@ Static Astro site for Polaris Group, replacing the Base44 build at go live.
 - Old Base44 routes: `public/_redirects`.
 - Research behind the refresh: `docs/`.
 
-## Go live checklist (agreed with Marc, 23 October 2026)
+## Go live checklist (agreed with Marc and the SEO workstream, 23 October 2026)
 
-Polaris goes live only after the new Bluesphere site is live, because the legal and privacy link points to bluespheresolutions.co.uk/privacy/.
+Launch order: Bluesphere (live 23 October 2026), then marctaverner.com, then Polaris.
 
-1. Check bluespheresolutions.co.uk/privacy/, /book/ and /services/ load on the live Bluesphere site.
-2. In src/config/legal.ts set BOOKING_URL to https://bluespheresolutions.co.uk/book/ and ADVISORY_URL to https://bluespheresolutions.co.uk/services/. Update the same two links in public/llms.txt.
-3. In Plausible, add the site polarisglobal.io and create goals: Booking Click, Fund Submission, Contact Submission, Council Interest, Outbound Link: Click, File Download. The script loads only on live builds.
-4. In Netlify, Forms, set email notifications for fund-submission, council-interest and polaris-contact to marc@bluespheresolutions.co.uk.
-5. Set PUBLIC_GO_LIVE=true in Netlify. This switches the robots meta tag, robots.txt and X-Robots-Tag header to allow search and AI crawlers.
-6. Attach the polarisglobal.io domain and change DNS only with Marc's explicit yes, together with the SEO and AI Search workstream.
+Done before go live: booking, advisory and legal links point at the live Bluesphere /book/, /services/ and /privacy/; entity spec v1.3 applied; Site Standards Checklist v1 met on the preview.
+
+1. In Plausible, add polarisglobal.io. Goals: Book Click, Form Submit, Outbound Link: Click, File Download, plus page view goals for /fund/thanks/ and /contact/thanks/. Add the AI referrer segment (chatgpt.com, chat.openai.com, perplexity.ai, gemini.google.com, copilot.microsoft.com, claude.ai, edgeservices.bing.com). The script loads only on indexable builds.
+2. In Netlify, Forms, set email notifications for fund-submission, council-interest and polaris-contact to marc@bluespheresolutions.co.uk.
+3. Set PUBLIC_INDEXABLE=true in Netlify and redeploy. This switches the robots meta tag, robots.txt and X-Robots-Tag header to allow search and AI crawlers. Then remove the Netlify team login.
+4. Attach polarisglobal.io and change DNS only with Marc's explicit yes, run with the SEO and AI Search workstream. Old Base44 paths already 301.
+5. Do not request indexing in Search Console until a live test shows the new page rather than the old Base44 host.
