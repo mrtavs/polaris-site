@@ -1,3 +1,10 @@
+/* Self hosted, subset fonts (scripts/make_fonts.py) */
+@font-face { font-family: 'Newsreader Variable'; src: url('/fonts/newsreader-opsz.woff2') format('woff2'); font-weight: 400 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Newsreader Variable'; src: url('/fonts/newsreader-opsz-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Instrument Sans'; src: url('/fonts/instrument-sans-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Instrument Sans'; src: url('/fonts/instrument-sans-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Instrument Sans'; src: url('/fonts/instrument-sans-600.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+
 /* Polaris Group: a reading house for theses. Cool paper, deep ink, one brass accent. */
 :root {
   --paper: #f1f3f5;

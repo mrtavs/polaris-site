@@ -1,12 +1,5 @@
 ---
-import '@fontsource-variable/newsreader/opsz.css';
-import '@fontsource-variable/newsreader/opsz-italic.css';
-import '@fontsource/instrument-sans/400.css';
-import '@fontsource/instrument-sans/500.css';
-import '@fontsource/instrument-sans/600.css';
 import '../styles/site.css';
-import serifUrl from '@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2?url';
-import sans400Url from '@fontsource/instrument-sans/files/instrument-sans-latin-400-normal.woff2?url';
 import { LEGAL_OWNER, LEGAL_COMPANY_NO, LEGAL_URL, BLUESPHERE_ORG_ID, BOOKING_URL, ADVISORY_URL } from '../config/legal';
 
 interface Props {
@@ -18,6 +11,7 @@ interface Props {
   darkHeader?: boolean;
   ogImage?: string;
   ogImageAlt?: string;
+  noCanonical?: boolean;
 }
 
 const { title, description, path, extraSchema = [], ogType = 'website', darkHeader = false } = Astro.props;
@@ -69,7 +63,6 @@ const graph = [
     '@id': PERSON_ID,
     name: 'Marc Taverner',
     url: 'https://marctaverner.com/',
-    sameAs: ['https://www.linkedin.com/in/marctaverner/'],
   },
   ...extraSchema,
 ];
@@ -83,8 +76,8 @@ const nav = [
   { href: '/contact/', label: 'Contact' },
 ];
 const current = (href: string) => path.startsWith(href);
-// Draft builds are noindex. Set PUBLIC_GO_LIVE=true in Netlify only at go live.
-const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
+// Draft builds are noindex. Set PUBLIC_INDEXABLE=true in Netlify only at go live (Site Standards Checklist v1, section 3).
+const isLive = import.meta.env.PUBLIC_INDEXABLE === 'true' || import.meta.env.PUBLIC_GO_LIVE === 'true';
 ---
 <!doctype html>
 <html lang="en-GB">
@@ -92,10 +85,11 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
-    <link rel="preload" href={serifUrl} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={sans400Url} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/newsreader-opsz.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {!Astro.props.noCanonical && <link rel="canonical" href={canonical} />}
+    {!Astro.props.noCanonical && <link rel="alternate" type="text/markdown" href={path === '/' ? '/index.md' : path.replace(/\/$/, '.md')} />}
     <meta name="author" content="Marc Taverner" />
     {isLive
       ? <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -105,7 +99,7 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
     <meta property="og:type" content={ogType} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    {!Astro.props.noCanonical && <meta property="og:url" content={canonical} />}
     <meta property="og:site_name" content="Polaris Group" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:image" content={`${site}${ogImage}`} />
@@ -177,10 +171,11 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
         </div>
         <div>
           <p class="footer-head">Marc Taverner</p>
+          <p class="footer-desc">Go to market and board advisor to web3, digital asset, fintech and AI companies.</p>
           <ul>
             <li><a href="https://marctaverner.com/">About Marc</a></li>
             <li><a href={ADVISORY_URL}>Advisory through Bluesphere</a></li>
-            <li><a href={BOOKING_URL} target="_blank" rel="noopener" class="plausible-event-name=Booking+Click">Book a 20 minute call</a></li>
+            <li><a href={BOOKING_URL} class="plausible-event-name=Book+Click plausible-event-location=footer">Book a 20 minute call</a></li>
             <li><a href="https://www.linkedin.com/in/marctaverner/">LinkedIn</a></li>
           </ul>
         </div>

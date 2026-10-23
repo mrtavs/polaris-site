@@ -21,7 +21,7 @@ const council = {
 ---
 <Base
   title="Polaris Council"
-  description="The Polaris Council convenes the private and public sectors on what applied AI means for people, companies and governments. It convened on St George's Day, 23 April 2026, at Speaker's House, Westminster."
+  description="The Polaris Council brings the private and public sectors together on applied AI. It convened on 23 April 2026 at Speaker's House, Westminster."
   path="/council/"
   extraSchema={[council]}
 >
@@ -85,7 +85,7 @@ const council = {
       <div><h2 id="join-h">Take part</h2></div>
       <div>
         <p>Attendance is by invitation. If your company, institution or office should be in the room, tell us why.</p>
-        <form class="form plausible-event-name=Council+Interest" name="council-interest" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="company-url">
+        <form class="form plausible-event-name=Form+Submit plausible-event-form=council" name="council-interest" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="company-url">
           <input type="hidden" name="form-name" value="council-interest" />
           <p class="hidden"><label>Leave this empty <input name="company-url" tabindex="-1" autocomplete="off" /></label></p>
           <label>Your name <input name="name" autocomplete="name" required /></label>

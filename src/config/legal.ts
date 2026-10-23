@@ -6,10 +6,6 @@ export const LEGAL_COMPANY_NO = '07183446';
 export const LEGAL_URL = 'https://bluespheresolutions.co.uk/privacy/';
 export const BLUESPHERE_ORG_ID = 'https://bluespheresolutions.co.uk/#organization';
 
-// Booking and advisory routes. The booking link is the Google appointment schedule from the fact base,
-// so it works whether or not the new Bluesphere site is live.
-// AGREED WITH MARC 23 Oct 2026: when Bluesphere v3 goes live, switch BOOKING_URL to
-// https://bluespheresolutions.co.uk/book/ and ADVISORY_URL to https://bluespheresolutions.co.uk/services/
-// (and the matching link in public/llms.txt), after checking both pages load.
-export const BOOKING_URL = 'https://calendar.app.google/mX3bQsTC2XQVf4zu9';
-export const ADVISORY_URL = 'https://bluespheresolutions.co.uk/';
+// Booking and advisory routes on the live Bluesphere site (live since 23 Oct 2026, checked 23 Oct 2026).
+export const BOOKING_URL = 'https://bluespheresolutions.co.uk/book/';
+export const ADVISORY_URL = 'https://bluespheresolutions.co.uk/services/';

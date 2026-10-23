@@ -17,11 +17,12 @@ interface Props {
   archived?: boolean;
   org?: string;
   extraLine?: string;
+  seoTitle?: string;
 }
 
 const {
   title, subtitle, kicker, description, path, dateLabel, datePublished,
-  dateModified, pdf, related = [], topic, archived = false, org, extraLine,
+  dateModified, pdf, related = [], topic, archived = false, org, extraLine, seoTitle,
 } = Astro.props;
 
 const url = new URL(path, 'https://polarisglobal.io').href;
@@ -39,7 +40,8 @@ const breadcrumb = {
 const article = {
   '@type': 'Article',
   '@id': `${url}#article`,
-  headline: subtitle ? `${title}: ${subtitle}` : title,
+  headline: subtitle && `${title}: ${subtitle}`.length <= 110 ? `${title}: ${subtitle}` : title,
+  ...(subtitle && `${title}: ${subtitle}`.length > 110 ? { alternativeHeadline: subtitle } : {}),
   description,
   url,
   mainEntityOfPage: url,
@@ -54,7 +56,7 @@ const article = {
   ...(archived ? { creativeWorkStatus: 'Archived' } : {}),
 };
 ---
-<Base title={subtitle ? `${title}: ${subtitle}` : title} description={description} path={path} extraSchema={[article, breadcrumb]} ogType="article">
+<Base title={seoTitle ?? (subtitle ? `${title}: ${subtitle}` : title)} description={description} path={path} extraSchema={[article, breadcrumb]} ogType="article">
   <article>
     <header class="article-head wrap">
       <p class="kicker">{kicker}</p>
