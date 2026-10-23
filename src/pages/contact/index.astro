@@ -15,7 +15,7 @@ import Base from '../../layouts/Base.astro';
     </p>
   </header>
   <section class="wrap" style="padding-bottom:24px">
-    <form class="form" name="polaris-contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="company-url">
+    <form class="form plausible-event-name=Contact+Submission" name="polaris-contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="company-url">
       <input type="hidden" name="form-name" value="polaris-contact" />
       <p class="hidden"><label>Leave this empty <input name="company-url" tabindex="-1" autocomplete="off" /></label></p>
       <label>Your name <input name="name" autocomplete="name" required /></label>
@@ -35,7 +35,7 @@ import Base from '../../layouts/Base.astro';
     </form>
     <p class="small" style="margin-top:28px">
       Prefer email? <a href="mailto:marc@bluespheresolutions.co.uk">marc@bluespheresolutions.co.uk</a>.
-      For advisory or board work, <a href={BOOKING_URL} target="_blank" rel="noopener">book a 20 minute call</a>.
+      For advisory or board work, <a href={BOOKING_URL} target="_blank" rel="noopener" class="plausible-event-name=Booking+Click">book a 20 minute call</a>.
     </p>
   </section>
 </Base>

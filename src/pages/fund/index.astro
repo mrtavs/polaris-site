@@ -36,7 +36,7 @@ import { LEGAL_URL } from '../../config/legal';
     <div class="wrap band-head">
       <div><h2 id="submit-h">Submit your company</h2></div>
       <div>
-        <form class="form" name="fund-submission" method="POST" action="/fund/thanks/" data-netlify="true" netlify-honeypot="company-url">
+        <form class="form plausible-event-name=Fund+Submission" name="fund-submission" method="POST" action="/fund/thanks/" data-netlify="true" netlify-honeypot="company-url">
           <input type="hidden" name="form-name" value="fund-submission" />
           <p class="hidden"><label>Leave this empty <input name="company-url" tabindex="-1" autocomplete="off" /></label></p>
           <label>Your name <input name="name" autocomplete="name" required /></label>

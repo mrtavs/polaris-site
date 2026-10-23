@@ -5,6 +5,8 @@ import '@fontsource/instrument-sans/400.css';
 import '@fontsource/instrument-sans/500.css';
 import '@fontsource/instrument-sans/600.css';
 import '../styles/site.css';
+import serifUrl from '@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2?url';
+import sans400Url from '@fontsource/instrument-sans/files/instrument-sans-latin-400-normal.woff2?url';
 import { LEGAL_OWNER, LEGAL_COMPANY_NO, LEGAL_URL, BLUESPHERE_ORG_ID, BOOKING_URL, ADVISORY_URL } from '../config/legal';
 
 interface Props {
@@ -90,6 +92,8 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
+    <link rel="preload" href={serifUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={sans400Url} as="font" type="font/woff2" crossorigin />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="author" content="Marc Taverner" />
@@ -122,6 +126,12 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
     <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full text for AI tools" />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Summary for AI tools" />
     <script type="application/ld+json" set:html={schema} />
+    {isLive && (
+      <>
+        <script defer data-domain="polarisglobal.io" src="https://plausible.io/js/script.file-downloads.outbound-links.tagged-events.js"></script>
+        <script is:inline>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };</script>
+      </>
+    )}
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -170,7 +180,7 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
           <ul>
             <li><a href="https://marctaverner.com/">About Marc</a></li>
             <li><a href={ADVISORY_URL}>Advisory through Bluesphere</a></li>
-            <li><a href={BOOKING_URL} target="_blank" rel="noopener">Book a 20 minute call</a></li>
+            <li><a href={BOOKING_URL} target="_blank" rel="noopener" class="plausible-event-name=Booking+Click">Book a 20 minute call</a></li>
             <li><a href="https://www.linkedin.com/in/marctaverner/">LinkedIn</a></li>
           </ul>
         </div>
