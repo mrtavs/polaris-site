@@ -1,6 +1,6 @@
 ## Where I'm starting
 
-**I expect AI to change the economics of knowledge work quite dramatically. As more people can get the same work done, the value will increasingly sit with whoever brings the expertise, knows the customer and has the right to use the information. I want to back businesses that help individuals and companies put those advantages to work with AI, keep control of them and keep a worthwhile share of what they earn.**
+**I expect AI to change the economics of knowledge work quite dramatically. As more people can get the same work done, the value will increasingly sit with whoever brings the knowledge, expertise, relationship with the counterparty or customer and has the right to use the information. I want to back businesses that help individuals and companies put those advantages to work with AI, keep control of them and keep a worthwhile share of the value created.**
 
 That's where Agents of Sovereignty starts for me. People need to find ways to remain useful and earn a living. Companies want the benefits of AI without handing over the knowledge and relationships their business depends on. Governments have a problem to work through too, because employment, tax receipts and the cost of supporting people are all tied up in this.
 
@@ -12,7 +12,7 @@ So the question I keep coming back to is, who actually does better when this pro
 
 I think AI will change employment substantially, but redundancies are only part of it. Who gets hired in the first place, how a junior learns the job, what a client will pay and how much work a small team can take on. The job title may stay much the same while the economics underneath it change.
 
-The evidence already warrants attention, although it does not justify a confident date for mass unemployment. Stanford's August 2026 analysis finds a widening employment gap for young workers in AI exposed occupations, operating mainly through reduced hiring. The authors also find no widespread economy wide displacement and describe the results as descriptive indicators rather than causal estimates. Danish research provides a useful counterweight: it finds changes in tasks and occupational movement without detectable changes in earnings or recorded hours over the period studied. [[1]](#n1) [[2]](#n2)
+The evidence already warrants attention, although it does not justify a confident date for mass unemployment. Stanford's August 2026 analysis finds a widening employment gap for young workers in AI-exposed occupations, operating mainly through reduced hiring. The authors also find no widespread economy-wide displacement and describe the results as descriptive indicators rather than causal estimates. Danish research provides a useful counterweight: it finds changes in tasks and occupational movement without detectable changes in earnings or recorded hours over the period studied. [\[1\]](https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/)[\[2\]](https://bfi.uchicago.edu/wp-content/uploads/2025/04/BFI_WP_2025-56-4.pdf)
 
 I don't think we should explain away that difference in the evidence. We don't yet know the pace, or which places and occupations will feel it most. But waiting for an unemployment crisis doesn't strike me as a sensible investment strategy either. A lot of the commercial relationships that determine who benefits will be settled before then.
 
@@ -22,23 +22,23 @@ I want to back businesses that work through that uneven transition. Some may ben
 
 ## Doing more work and getting paid for it
 
-There's a fairly basic issue here: producing more doesn't mean you get to keep more.
+There's a fairly basic issue here, producing more doesn't mean you get to keep more.
 
 AI can help someone do more work while leaving them no better off. Their employer keeps the saving, a client expects a lower price, or the platform takes its fee. And some of the apparent gain disappears into checking the output and finding the next customer.
 
-Research on customer support work illustrates both the opportunity and the distribution question. A field study found substantial productivity benefits, particularly for less experienced workers, with evidence that the system helped spread practices associated with stronger performers. That establishes a way to improve work. It leaves open how the resulting gains should be shared between the people whose experience informed the system, those using it, the employer and the supplier. [[3]](#n3)
+Research on customer-support work illustrates both the opportunity and the distribution question. A field study found substantial productivity benefits, particularly for less experienced workers, with suggestive evidence that the system helped spread practices associated with stronger performers. That establishes a way to improve work. It leaves open how the resulting gains should be shared between the people whose experience informed the system, those using it, the employer and the supplier. [\[3\]](https://www.nber.org/papers/w31161)
 
 For an individual, I want to know what's left after paying for the tools, checking the work, making corrections and winning the customer. For a company, I want to see the whole job. Five minutes saved in a demonstration is easy to like; five minutes saved at the cost of an hour's rework is another matter.
 
-This is why I've moved away from universal income funded by ordinary personal data as the foundation of the thesis. I haven't seen enough evidence that it produces meaningful, recurring income per person. I still care about people sharing in the value created from their lives and work. I'm less convinced by the payment mechanism I originally attached to that ambition.
+This is why I've moved away from universal income funded by ordinary personal data as the foundation of the thesis. I haven't seen enough evidence that people care deeply enough about the sovereignty of their data or their data is capable of producing meaningful, recurring income. I still care about people sharing in the value created from their lives and work. I'm less convinced by the payment mechanism I originally attached to that ambition.
 
 My stronger starting point is expertise applied to a real customer need. A person may hold specialist judgement, a trusted relationship, access to a particular market or information that is difficult to reproduce legitimately. AI may let that person serve more customers or offer a service that was previously uneconomic. The opportunity depends on preserving something scarce as the cost of producing generic work falls. People without those advantages also need a route into earning; that is where access, learning and credible evidence of capability become important. Their need is real even where the payer has yet to be established.
 
 I'm still interested in licensing expertise and data where someone has the right to supply it and a buyer has a reason to pay again. The same goes for services delivered by people using agents. There needs to be a customer at the other end.
 
-There are counterexamples worth taking seriously. US Trump Accounts give eligible children a route into invested capital, including a $1,000 government contribution for qualifying US citizens born in 2025 to 2028. On 19 October, Musk pledged one SpaceX share per American child next year. Details remain unsettled. [[12]](#n12) [[13]](#n13)
+There are counterexamples worth taking seriously. US Trump Accounts give eligible children a route into invested capital, including a $1,000 government contribution for qualifying US citizens born in 2025 to 2028, which a parent has to claim rather than receive automatically. On 19 October, Musk pledged one SpaceX share per American child next year. Details as yet remain unsettled. \[12\]\[13\]
 
-Anthropic's announcement is a separate proposal: 5% of its shares would go into a public benefit fund, subject to stockholder approval. It could support donations or distributions to particular populations. That isn't a promise of shares for every young person, and its eventual reach is still to be set. [[14]](#n14)
+Anthropic's announcement is a separate proposal: 5% of its shares would go into a public-benefit fund, subject to stockholder approval. It could support donations or distributions to particular populations. That isn't a promise of shares for every young person, and its eventual reach is still to be set. \[14\]
 
 I welcome the direction. Owning a stake can give people a share of future growth, and that is a real counterexample to the idea that all the value must stay with the founders and platforms. I wouldn't dismiss the benefit to a family.
 
@@ -68,7 +68,7 @@ Some arrangements may work better through professional bodies, employers, unions
 
 It's easy to see how this starts inside a company. Someone finds an AI tool that helps them get their work done and starts using it. From their point of view it makes sense. The company then has to work out what information went into it, what the tool was allowed to do and who is responsible if it goes wrong.
 
-The concern is supported by evidence. In the UK Business Data Survey 2026, 73% of businesses handling digitised data said they were uncomfortable with that data being used to train external AI models. This is a finding about attitudes to training; it should not be stretched into a refusal to use external services. Separate UK research identifies data security and accuracy as concerns while finding that concerns often do not prevent adoption. [[4]](#n4) [[5]](#n5)
+The concern is supported by evidence. In the UK Business Data Survey 2026, 73% of businesses handling digitised data said they were uncomfortable with that data being used to train external AI models. This is a finding about attitudes to training; it should not be stretched into a refusal to use external services. Separate UK research identifies data security and accuracy as concerns while finding that concerns often do not prevent adoption. [\[4\]](https://www.gov.uk/government/statistics/uk-business-data-survey-2026/uk-business-data-survey-2026)[\[5\]](https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research)
 
 That's the opening I want to investigate. Work where AI is useful enough to be worth adopting, but the customer needs better controls before they can put it into everyday use. The value is in getting the work done reliably.
 
@@ -76,13 +76,13 @@ The first buyer may be the person responsible for the business outcome. Security
 
 The threat model also needs to be precise. Use of information for model training, disclosure to another user, excessive access by an agent, an unauthorised action and dependency on one supplier are different problems. A contractual restriction can address one without resolving the others. Controls need to match the actual risk and the consequences of failure.
 
-An independent supplier has to win this argument against products the customer already buys. Microsoft is extending Agent 365 across external platforms, including registry connections to AWS and Google. Independent evaluation products already offer capabilities such as testing, tracing and self hosted deployment. The market contains capable competitors with distribution. [[8]](#n8) [[9]](#n9)
+An independent supplier has to win this argument against products the customer already buys. Microsoft is extending Agent 365 across external platforms, with registry connections to AWS and Google in public preview. Independent evaluation products already offer capabilities such as testing, tracing and self-hosted deployment. The market contains capable competitors with distribution. [\[8\]](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)[\[9\]](https://www.langchain.com/langsmith/evaluation)
 
 A startup needs a reason to win: a job the incumbent handles badly, evidence the customer can't get elsewhere, or an integration that makes the whole thing practical. Being independent may help. It won't, on its own, get a purchase order signed.
 
 ## The harness, and what the customer actually keeps
 
-I still think the harness matters. I mean the knowledge, instructions, permissions, tools, examples and corrections that make a model useful for a particular job. Much of the work goes into getting those things right.
+I beleive the harness matters. I mean the knowledge, instructions, permissions, tools, examples and corrections that make a model useful for a particular job. Much of the work goes into getting those things right.
 
 I want the customer to retain the parts that contain their knowledge and define acceptable work. I also want evidence that those parts remain useful as the underlying technology changes.
 
@@ -100,11 +100,11 @@ Governments can't ignore this if employment becomes less secure, young people st
 
 Policy could influence that outcome through training, procurement, competition, employment protections, social insurance and taxation. It could also strengthen the position of existing technology suppliers. A policy response is not automatically a market for the businesses I would like to see built.
 
-We can already see governments trying to help people adapt. The UK's AI Skills Boost programme targets 10 million workers by 2030. The IMF discusses training, social protection and tax changes. Useful signs of interest, although they don't amount to a commitment to personal data income or portable agents. [[6]](#n6) [[7]](#n7)
+We can already see governments trying to help people adapt. The UK's AI Skills Boost programme targets 10 million workers by 2030. The IMF discusses training, social protection and tax changes. Useful signs of interest, although they don't amount to a commitment to personal data income or portable agents. \[6\]\[7\]
 
-For investment purposes I'd put a funded programme a long way ahead of a speech about what ought to happen. A business relying on government needs to know who can buy, where the money comes from and how long it will take to get paid.
+For investment purposes I'd put a funded programme a long way ahead of a speech about what ought to happen. A business relying on the government needs to know who can buy, where the money comes from and how long it will take to get paid.
 
-The same discipline applies to regulation. We need to establish which obligations attach to the customer's actual activity and what would satisfy them. Neither a broad appeal to the AI Act nor an assertion of data ownership is enough. European guidance makes clear, for example, that modifying a general purpose model does not automatically create all the obligations of a model provider. Data Act switching provisions also require attention to whose rights and information are involved. [[10]](#n10) [[11]](#n11)
+The same discipline applies to regulation. We need to establish which obligations attach to the customer's actual activity and what would satisfy them. Neither a broad appeal to the AI Act nor an assertion of data ownership is enough. European guidance makes clear, for example, that modifying a general-purpose model does not automatically create all the obligations of a model provider. Data Act switching provisions also need reading against the specific service: the data a customer can take with it excludes anything protected by intellectual property rights or held as the provider's trade secret. [\[10\]](https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers)[\[11\]](https://digital-strategy.ec.europa.eu/en/factpages/data-act-explained)
 
 I see a useful role for policy work in improving the conditions for participation: clearer rights, credible evidence of skills, fairer terms for contributions and practical routes back into productive work. I would keep that work connected to commercial evidence, while judging its success separately from the return on an equity investment.
 
@@ -120,7 +120,7 @@ I would pursue workforce participation and compensation arrangements through sma
 
 Across these areas, I would look for access to customers, depth in a workflow, dependable execution and an advantage that improves with use. Any claimed data advantage must be based on rights the company actually holds. Any network effect must show how one participant makes the product more valuable to another; a growing database alone is insufficient.
 
-The technology choice follows the problem. Privacy preserving techniques, local processing, identity systems and shared ledgers may each be useful. Blockchain has a case where several parties need a shared record or settlement mechanism and cannot rely comfortably on one operator. It still has to beat a simpler arrangement on cost, usability and enforceability. A token does not create demand for the underlying contribution.
+The technology choice follows the problem. Privacy-preserving techniques, local processing, identity systems and shared ledgers may each be useful. Blockchain has a case where several parties need a shared record or settlement mechanism and cannot rely comfortably on one operator. It still has to beat a simpler arrangement on cost, usability and enforceability. A token does not create demand for the underlying contribution.
 
 I will pass on businesses whose income case relies on ordinary personal data acquiring an unexplained price, that promise protections they cannot enforce, or whose principal feature is already adequate inside the customer's existing bundle. I will also pass on a service business priced as software without evidence that delivery can become repeatable. In every category, the business must operate within rights genuinely agreed with the people and organisations whose contributions it uses.
 
@@ -130,9 +130,9 @@ In the first year I'd spend most of the effort proving demand in a few specific 
 
 In years two and three I'd put more time and capital behind the businesses where customers come back, delivery costs hold up and the product earns a bigger place in their work. We'll also have seen how the incumbents respond. If the agreed tests keep failing, I don't want to fund another explanation for why demand is just around the corner.
 
-In years four and five, the question becomes whether the company can maintain its position through changing models, platform terms and regulation. Expansion, acquisition or liquidity may be possible. None should be assumed simply because the thesis has a five year horizon.
+In years four and five, the question becomes whether the company can maintain its position through changing models, platform terms and regulation. Expansion, acquisition or liquidity may be possible. None should be assumed simply because the thesis has a five-year horizon.
 
-At every stage I would test three futures. Under slower adoption, the company must justify itself through present day productivity or control. Under uneven disruption, it must serve the occupations and businesses experiencing the change. Under rapid displacement, it must show that its buyer retains the ability to pay. A consumer business can face its strongest social need at precisely the moment its customers lose purchasing power.
+At every stage I would test three futures. Under slower adoption, the company must justify itself through present-day productivity or control. Under uneven disruption, it must serve the occupations and businesses experiencing the change. Under rapid displacement, it must show that its buyer retains the ability to pay. A consumer business can face its strongest social need at precisely the moment its customers lose purchasing power.
 
 Time and capital need different decisions. Some research, policy work or advisory activity may be well worth doing without becoming a venture investment. I don't want the thesis to force everything I care about into one return model.
 
@@ -140,13 +140,13 @@ Time and capital need different decisions. Some research, policy work or advisor
 
 I have to be willing to be wrong about this. Otherwise it's a story I like, rather than something I can use to decide where to invest.
 
-If people use a product consistently and still earn no more after costs, that weakens the individual income case. The same is true if customers and platforms take almost all the gain. Lots of usage isn't enough.
+If people use a product consistently and still earn no more after costs, that weakens the individual-income case. The same is true if customers and platforms take almost all the gain. Lots of usage isn't enough.
 
-On the enterprise side, I'd worry if paid trials keep turning into custom projects, existing suppliers already do the job, or the checking costs eat the saving. A compliance concern needs to turn into a purchase at some point.
+On the enterprise side, I'd worry if paid trials keep turning into custom projects, existing suppliers already do the job, or the checking costs eat the savings. A compliance concern needs to turn into a purchase at some point.
 
 For portability, I require a real move between systems with acceptable outcomes and a measured cost. If customers rarely need to move, or can already move cheaply, the proposed premium will be difficult to sustain.
 
-With government dependent opportunities, I want to see support become funding, authority or an actual purchase. I'm not going to keep moving the date because I like the idea.
+With government-dependent opportunities, I want to see support become funding, authority or an actual purchase. I'm not going to keep moving the date because I like the idea.
 
 I will review these signals quarterly and revisit the full thesis annually. The important measures are retained income, customer outcomes, renewal, implementation effort, margins and the position of competitors. Funding announcements and model benchmarks provide context; they cannot substitute for those measures.
 
@@ -160,21 +160,64 @@ There should be good businesses here. I want to find the ones where the customer
 
 ## Evidence notes
 
-This version draws on the research discussed in October 2026, with the US equity and public benefit announcements added on 21 October. The investment choices and tests are my judgements, not findings proved by the sources. Geography, cheque sizes and allocations still need to fit the investment mandate.
+This version draws on the research discussed in October 2026, with the US equity and public-benefit announcements added on 21 October. Every cited source was checked against my primary document on 23 October 2026. I am human, I may make mistakes & I may have thoughts and opinions you don’t agree with. These are likely driven by my own personal experiences and humanity.
 
-<ol class="notes">
-<li id="n1">Stanford Digital Economy Lab, <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/">Canaries in the Coal Mine?</a>, revised August 2026. US payroll evidence; descriptive indicators, with limitations acknowledged by the authors.</li>
-<li id="n2">Anders Humlum and Emilie Vestergaard, <a href="https://bfi.uchicago.edu/wp-content/uploads/2025/04/BFI_WP_2025-56-4.pdf">Large Language Models, Small Labor Market Effects</a>, September 2025. Danish adoption surveys linked to administrative records; limited to the population and period studied.</li>
-<li id="n3">Erik Brynjolfsson, Danielle Li and Lindsey Raymond, <a href="https://www.nber.org/papers/w31161">Generative AI at Work</a>, NBER working paper, subsequently published in 2025. Evidence from a specific customer support setting; it does not establish economy wide income effects.</li>
-<li id="n4"><a href="https://www.gov.uk/government/statistics/uk-business-data-survey-2026/uk-business-data-survey-2026">UK Business Data Survey 2026</a>. Attitudes to external AI training among businesses handling digitised data; not a willingness to pay study.</li>
-<li id="n5"><a href="https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research">UK AI Adoption Research</a>, updated February 2026, based on 2025 fieldwork. Reported adoption, benefits and barriers; the survey does not capture shadow adoption.</li>
-<li id="n6">IMF, <a href="https://www.imf.org/en/Publications/Staff-Discussion-Notes/Issues/2024/06/11/Broadening-the-Gains-from-Generative-AI-The-Role-of-Fiscal-Policies-549639">Broadening the Gains from Generative AI: The Role of Fiscal Policies</a>, June 2024. Policy analysis and recommendations, rather than an enacted programme or forecast of certain unemployment.</li>
-<li id="n7"><a href="https://www.gov.uk/government/publications/ai-skills-boost-explainer">UK AI Skills Boost explainer</a>, January 2026. Government and industry programme and target; not evidence that the target has been achieved or that participation increases earnings.</li>
-<li id="n8">Microsoft, <a href="https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/">Agent 365 capabilities and integrations</a>, May 2026. Vendor documentation distinguishes available capabilities from preview and planned features; it does not establish complete cross platform control.</li>
-<li id="n9"><a href="https://www.langchain.com/langsmith/evaluation">LangSmith evaluation product documentation</a>. Evidence of an existing competing offering, rather than independent proof of performance or customer outcomes.</li>
-<li id="n10">European Commission, <a href="https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers">Guidelines on obligations for General Purpose AI providers</a>. The application of obligations depends on the activity and circumstances.</li>
-<li id="n11">European Commission, <a href="https://digital-strategy.ec.europa.eu/en/factpages/data-act-explained">Data Act explained</a>. Switching rights and provider intellectual property exceptions require a service specific reading.</li>
-<li id="n12">IRS, <a href="https://www.irs.gov/trumpaccounts">Trump Accounts</a>. Eligibility and the $1,000 pilot contribution; not a universal payment to all children.</li>
-<li id="n13">Associated Press, <a href="https://apnews.com/article/b3312da37a0e340be275295073055e00">19 October 2026</a>. Musk's proposed SpaceX share gift; announcement rather than completed distribution.</li>
-<li id="n14">Anthropic, <a href="https://www.anthropic.com/news/public-benefit-fund">Investing in the public benefit</a>, 18 October 2026. Proposed equity commitment, approval condition and potential uses; distribution arrangements remain to be developed.</li>
-</ol>
+<div class="evidence">
+
+[\[1\]](https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/) Stanford Digital Economy Lab, Canaries in the Coal Mine?, revised August 2026. US payroll evidence; descriptive indicators, with limitations acknowledged by the authors.
+
+<https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/>
+
+[\[2\]](https://bfi.uchicago.edu/wp-content/uploads/2025/04/BFI_WP_2025-56-4.pdf) Anders Humlum and Emilie Vestergaard, Large Language Models, Small Labor Market Effects, September 2025. Danish adoption surveys linked to administrative records; limited to the population and period studied.
+
+<https://bfi.uchicago.edu/wp-content/uploads/2025/04/BFI_WP_2025-56-4.pdf>
+
+[\[3\]](https://www.nber.org/papers/w31161) Erik Brynjolfsson, Danielle Li and Lindsey Raymond, Generative AI at Work, NBER working paper, subsequently published in 2025. Evidence from a specific customer-support setting; it does not establish economy-wide income effects.
+
+<https://www.nber.org/papers/w31161>
+
+[\[4\]](https://www.gov.uk/government/statistics/uk-business-data-survey-2026/uk-business-data-survey-2026) UK Business Data Survey 2026. Attitudes to external AI training among businesses handling digitised data; not a willingness-to-pay study.
+
+<https://www.gov.uk/government/statistics/uk-business-data-survey-2026/uk-business-data-survey-2026>
+
+[\[5\]](https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research) UK AI Adoption Research, updated February 2026, based on 2025 fieldwork. Reported adoption, benefits and barriers; the survey does not capture shadow adoption.
+
+<https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research>
+
+[\[6\]](https://www.imf.org/en/Publications/Staff-Discussion-Notes/Issues/2024/06/11/Broadening-the-Gains-from-Generative-AI-The-Role-of-Fiscal-Policies-549639) IMF, Broadening the Gains from Generative AI: The Role of Fiscal Policies, June 2024. Policy analysis and recommendations, rather than an enacted programme or forecast of certain unemployment.
+
+<https://www.imf.org/en/Publications/Staff-Discussion-Notes/Issues/2024/06/11/Broadening-the-Gains-from-Generative-AI-The-Role-of-Fiscal-Policies-549639>
+
+[\[7\]](https://www.gov.uk/government/publications/ai-skills-boost-explainer) UK AI Skills Boost explainer, January 2026. Government-industry programme and target; not evidence that the target has been achieved or that participation increases earnings.
+
+<https://www.gov.uk/government/publications/ai-skills-boost-explainer>
+
+[\[8\]](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/) Microsoft, Agent 365 capabilities and integrations, May 2026. Agent 365 itself is generally available; the AWS Bedrock and Google Cloud registry sync is in public preview, with lifecycle governance over those agents still to come.
+
+<https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/>
+
+[\[9\]](https://www.langchain.com/langsmith/evaluation) LangSmith evaluation product documentation. Evidence of an existing competing offering, rather than independent proof of performance or customer outcomes.
+
+<https://www.langchain.com/langsmith/evaluation>
+
+[\[10\]](https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers) European Commission, Guidelines on obligations for General-Purpose AI providers. Modification makes an actor a provider only where it uses more than one third of the original model's training compute, and even then the obligations are limited to documenting the modification.
+
+<https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers>
+
+[\[11\]](https://digital-strategy.ec.europa.eu/en/factpages/data-act-explained) European Commission, Data Act explained. Switching and egress charges end on 12 January 2027; the exportable scope covers input and output data and metadata but excludes material protected by intellectual property rights or constituting the provider's trade secret.
+
+<https://digital-strategy.ec.europa.eu/en/factpages/data-act-explained>
+
+[\[12\]](https://www.irs.gov/trumpaccounts) IRS, Trump Accounts. Eligibility and the $1,000 pilot contribution; not a universal payment to all children, and the contribution must be elected on Form 4547 even where Treasury has opened the account automatically.
+
+<https://www.irs.gov/trumpaccounts>
+
+\[13\] Associated Press, 19 October 2026. Musk's proposed SpaceX share gift; announcement rather than completed distribution. The pledge, its date and its unsettled details are corroborated by several outlets carrying the AFP report of 19 and 20 October 2026.
+
+<https://apnews.com/article/b3312da37a0e340be275295073055e00>
+
+\[14\] Anthropic, Investing in the public benefit, 18 October 2026. Proposed equity commitment, approval condition and potential uses; distribution arrangements remain to be developed. The announcement also provides for a further 2% at the board's discretion for every 50% increase in company value above a baseline.
+
+<https://www.anthropic.com/news/public-benefit-fund>
+
+</div>

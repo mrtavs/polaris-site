@@ -15,11 +15,13 @@ interface Props {
   related?: { href: string; label: string }[];
   topic?: string;
   archived?: boolean;
+  org?: string;
+  extraLine?: string;
 }
 
 const {
   title, subtitle, kicker, description, path, dateLabel, datePublished,
-  dateModified, pdf, related = [], topic, archived = false,
+  dateModified, pdf, related = [], topic, archived = false, org, extraLine,
 } = Astro.props;
 
 const url = new URL(path, 'https://polarisglobal.io').href;
@@ -47,8 +49,9 @@ const article = {
       <h1>{title}</h1>
       {subtitle && <p class="subtitle">{subtitle}</p>}
       <p class="byline">
-        <span>By <a href="https://marctaverner.com/" rel="author">Marc Taverner</a></span>
+        <span>By <a href="https://marctaverner.com/" rel="author">Marc Taverner</a>{org && `, ${org}`}</span>
         <span>{dateLabel}</span>
+        {extraLine && <span>{extraLine}</span>}
       </p>
       <div class="article-tools">
         {pdf && <a class="btn" href={pdf} download>Download the PDF</a>}

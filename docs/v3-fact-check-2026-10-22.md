@@ -1,5 +1,7 @@
 # V3 thesis fact check: "Investing in the Harness"
 
+Note: this fact check was run on the 22 October drafts. Marc made his own fixes in the final theses of 23 October 2026 (Google Docs 1-mjm6U7BCenOKxmr4qCbT-dXmaOPSHaUjKv0L717wNw and 1XNbfEBMN11OEmUwtzW6vDU4NAxQrExNlVf7uHAVL3Mg), which are the only versions published on the site.
+
 Doc: Google Doc 1xid-lxBsm73Wb5ZnL6cZs9SlyH-0YiHHwFnywQGlOmE (Drive title "V3 Investing in the Harness — My Thesis on Applied AI, Governance and Sovereignty"). Byline reads "September 2026". Checked 22 October 2026. The document was read only, not edited.
 
 ## Document structure (headings in order)
