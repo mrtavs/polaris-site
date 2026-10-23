@@ -7,7 +7,7 @@
 /SelfSovereignIdentityAIAgents /archive/self-sovereign-identity-and-ai-agents/ 301
 /Insights                      /theses/                                        301
 /PolarisVision                 https://marctaverner.com/                       301
-/PolarisFund                   /                                               301
+/PolarisFund                   /fund/                                          301
 /PolarisCouncil                /council/                                       301
 /AboutUs                       https://marctaverner.com/                       301
 /ContactUs                     /contact/                                       301
@@ -15,9 +15,11 @@
 /EventPolarisCouncil2026       /council/                                       301
 /EventPolarisCouncilLaunch     /council/                                       301
 /EventPolarisCouncilLaunchV2   /council/                                       301
-/PrivacyPolicy                 /privacy/                                       301
-/CookiePolicy                  /privacy/                                       301
-/TermsAndConditions            /privacy/                                       301
+/PrivacyPolicy                 https://bluespheresolutions.co.uk/privacy/ 301
+/CookiePolicy                  https://bluespheresolutions.co.uk/privacy/ 301
+/TermsAndConditions            https://bluespheresolutions.co.uk/privacy/ 301
 /Sitemap                       /sitemap-index.xml                              301
 /thesis                        /archive/agents-of-sovereignty-2025/            301
 /insights                      /theses/                                        301
+/privacy                       https://bluespheresolutions.co.uk/privacy/ 301
+/privacy/                      https://bluespheresolutions.co.uk/privacy/ 301

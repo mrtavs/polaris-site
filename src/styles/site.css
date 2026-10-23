@@ -205,3 +205,45 @@ article .article-head h1 { max-width: none; }
 .article-body .evidence { font-family: var(--sans); font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft); overflow-wrap: anywhere; }
 .article-body .evidence li { margin-bottom: 0.8em; }
 .article-body .evidence p { margin-bottom: 0.7em; }
+
+/* Home hero: circumpolar star trails around Polaris */
+.hero-night {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: radial-gradient(110% 95% at 74% 50%, #16283f 0%, #0d1a2c 45%, #0b1626 75%);
+  color: #e8ecf1;
+  min-height: clamp(600px, 88vh, 860px);
+  display: flex; align-items: center;
+  padding-block: 72px;
+}
+.hero-night .chart {
+  position: absolute; z-index: -2; pointer-events: none;
+  width: clamp(820px, 80vw, 1240px); height: auto; aspect-ratio: 1;
+  top: 50%; right: clamp(-320px, -16vw, -140px); transform: translateY(-50%);
+}
+.hero-night::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, #0b1626 0%, rgba(11,22,38,.92) 30%, rgba(11,22,38,.45) 52%, rgba(11,22,38,0) 68%);
+}
+.hero-copy { position: relative; }
+.hero-night h1 { color: #f3f5f8; max-width: 13ch; font-size: clamp(2.6rem, 5.8vw, 4.6rem); line-height: 1.04; letter-spacing: -0.015em; }
+.hero-night .lede { color: #b7c2cf; max-width: 32rem; margin-top: 28px; }
+.hero-night .small { color: #8e9bab; margin-top: 28px; }
+.hero-night .small a { color: #e8ecf1; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero-night .btn { border-color: rgba(232,236,241,.55); color: #e8ecf1; }
+.hero-night .btn:hover { background: #e8ecf1; color: #0b1626; }
+.hero-night .btn.primary { background: #cfae6d; border-color: #cfae6d; color: #0b1626; }
+.hero-night .btn.primary:hover { background: #e2c58a; border-color: #e2c58a; }
+.hero-night :focus-visible { outline-color: #cfae6d; }
+
+@media (max-width: 760px) {
+  .hero-night { min-height: 0; display: block; padding-top: 0; padding-bottom: 56px; }
+  .hero-night .chart { position: relative; z-index: -2; display: block; width: 150vw; max-width: none; top: auto; right: auto; left: 50%; transform: translateX(-50%); margin-top: -38vw; margin-bottom: -46vw; }
+  .hero-night::before { background: linear-gradient(180deg, rgba(11,22,38,0) 0%, rgba(11,22,38,0) 30%, rgba(11,22,38,.85) 58%, #0b1626 72%); }
+  .hero-night h1 { max-width: 12ch; }
+}
+
+.masthead-dark { background: #0b1626; border-bottom-color: rgba(207,174,109,.18); }
+.masthead-dark .brand { color: #f3f5f8; }
+.masthead-dark nav a { color: #b7c2cf; }
+.masthead-dark nav a:hover { color: #f3f5f8; }

@@ -5,6 +5,7 @@ import '@fontsource/instrument-sans/400.css';
 import '@fontsource/instrument-sans/500.css';
 import '@fontsource/instrument-sans/600.css';
 import '../styles/site.css';
+import { LEGAL_OWNER, LEGAL_COMPANY_NO, LEGAL_URL, BLUESPHERE_ORG_ID } from '../config/legal';
 
 interface Props {
   title: string;
@@ -12,9 +13,10 @@ interface Props {
   path: string;
   extraSchema?: Record<string, unknown>[];
   ogType?: string;
+  darkHeader?: boolean;
 }
 
-const { title, description, path, extraSchema = [], ogType = 'website' } = Astro.props;
+const { title, description, path, extraSchema = [], ogType = 'website', darkHeader = false } = Astro.props;
 const site = 'https://polarisglobal.io';
 const canonical = new URL(path, site).href;
 const fullTitle = path === '/' ? title : `${title} | Polaris Group`;
@@ -32,6 +34,7 @@ const graph = [
     description:
       'Polaris Group focuses on where value is moving in applied AI, carefully selects start ups for private angel investment and convenes the private and public sectors through the Polaris Council.',
     founder: { '@id': PERSON_ID, '@type': 'Person', name: 'Marc Taverner', url: 'https://marctaverner.com/' },
+    parentOrganization: { '@id': BLUESPHERE_ORG_ID, '@type': 'Organization', name: LEGAL_OWNER, url: 'https://bluespheresolutions.co.uk/' },
     subOrganization: {
       '@type': 'Organization',
       '@id': `${site}/#council`,
@@ -53,6 +56,7 @@ const schema = JSON.stringify({ '@context': 'https://schema.org', '@graph': grap
 
 const nav = [
   { href: '/theses/', label: 'Theses' },
+  { href: '/fund/', label: 'Fund' },
   { href: '/council/', label: 'Council' },
   { href: '/archive/', label: 'Archive' },
   { href: '/contact/', label: 'Contact' },
@@ -83,7 +87,7 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <header class="masthead">
+    <header class={darkHeader ? "masthead masthead-dark" : "masthead"}>
       <div class="wrap masthead-inner">
         <a class="brand" href="/" aria-label="Polaris Group home">
           <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
@@ -120,6 +124,7 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
             <li><a href="/theses/investing-in-the-harness/">Investing in the Harness</a></li>
             <li><a href="/theses/agents-of-sovereignty/">Agents of Sovereignty</a></li>
             <li><a href="/archive/">Archive</a></li>
+            <li><a href="/fund/">Polaris Fund</a></li>
           </ul>
         </div>
         <div>
@@ -134,7 +139,7 @@ const isLive = import.meta.env.PUBLIC_GO_LIVE === 'true';
       </div>
       <div class="wrap footer-base">
         <p>London, working globally. <a href="mailto:marc@bluespheresolutions.co.uk">marc@bluespheresolutions.co.uk</a></p>
-        <p><a href="/privacy/">Privacy</a></p>
+        <p>Polaris Group is owned by {LEGAL_OWNER}, company {LEGAL_COMPANY_NO}. <a href={LEGAL_URL}>Legal and privacy</a></p>
       </div>
     </footer>
   </body>

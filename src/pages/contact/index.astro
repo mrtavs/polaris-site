@@ -1,4 +1,5 @@
 ---
+import { LEGAL_URL } from '../../config/legal';
 import Base from '../../layouts/Base.astro';
 ---
 <Base
@@ -29,7 +30,7 @@ import Base from '../../layouts/Base.astro';
         </select>
       </label>
       <label>Message <textarea name="message" required></textarea></label>
-      <p class="small">We use your details only to reply to you. See the <a href="/privacy/">privacy notice</a>.</p>
+      <p class="small">We use your details only to reply to you. See the <a href={LEGAL_URL}>privacy notice</a>.</p>
       <button class="btn primary" type="submit">Send message</button>
     </form>
     <p class="small" style="margin-top:28px">

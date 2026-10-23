@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LEGAL_URL } from '../../config/legal';
+---
+<Base
+  title="Polaris Fund"
+  description="Polaris carefully selects start ups for private angel investment: companies that make the AI harness portable, provable or protected, and sell to someone who is obliged to buy."
+  path="/fund/"
+>
+  <header class="article-head wrap">
+    <h1>Polaris Fund</h1>
+    <p class="lede" style="margin-top:20px">
+      Polaris carefully selects start ups for private angel investment. We back companies that make the harness
+      portable, provable or protected, and that sell to someone who is obliged to buy.
+    </p>
+  </header>
+
+  <section class="wrap band-head" style="padding-bottom:8px">
+    <div><h2>What we look at</h2></div>
+    <div>
+      <ul class="principles">
+        <li>Agent governance, identity and audit</li>
+        <li>Evaluation and observability infrastructure</li>
+        <li>Digital identity wallet middleware</li>
+        <li>Post quantum crypto agility</li>
+        <li>Confidential computing and attested inference</li>
+        <li>European sovereign AI infrastructure</li>
+      </ul>
+      <p class="small" style="margin-top:18px">
+        The reasoning is set out in <a href="/theses/investing-in-the-harness/">Investing in the Harness</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="submit-h">
+    <div class="wrap band-head">
+      <div><h2 id="submit-h">Submit your company</h2></div>
+      <div>
+        <form class="form" name="fund-submission" method="POST" action="/fund/thanks/" data-netlify="true" netlify-honeypot="company-url">
+          <input type="hidden" name="form-name" value="fund-submission" />
+          <p class="hidden"><label>Leave this empty <input name="company-url" tabindex="-1" autocomplete="off" /></label></p>
+          <label>Your name <input name="name" autocomplete="name" required /></label>
+          <label>Email <input type="email" name="email" autocomplete="email" required /></label>
+          <label>Company <input name="company" autocomplete="organization" required /></label>
+          <label>Website <input type="url" name="website" placeholder="https://" required /></label>
+          <label>Link to your deck <input type="url" name="deck" placeholder="https://" /></label>
+          <label>What you are building, in two sentences <textarea name="message" required></textarea></label>
+          <p class="small">We use your details only to review your company and reply. See the <a href={LEGAL_URL}>privacy notice</a>.</p>
+          <button class="btn primary" type="submit">Submit company</button>
+        </form>
+        <p class="small" style="margin-top:24px">This page is for founders. It is not an offer of, or invitation to make, any investment.</p>
+      </div>
+    </div>
+  </section>
+</Base>
