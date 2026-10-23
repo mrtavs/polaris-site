@@ -2,5 +2,9 @@
   command = "npm run build"
   publish = "dist"
 
+# Go live, 23 October 2026 (Marc's instruction): indexing on for search and AI crawlers.
+[build.environment]
+  PUBLIC_INDEXABLE = "true"
+
 # Crawler and index headers are written to dist/_headers by scripts/postbuild.mjs,
-# driven by PUBLIC_GO_LIVE (draft blocks everything).
+# driven by PUBLIC_INDEXABLE (unset blocks everything).
