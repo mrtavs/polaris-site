@@ -222,7 +222,7 @@ article .article-head h1 { max-width: none; }
 }
 .hero-night::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: linear-gradient(90deg, #0b1626 0%, rgba(11,22,38,.92) 30%, rgba(11,22,38,.45) 52%, rgba(11,22,38,0) 68%);
+  background: linear-gradient(90deg, rgba(11,22,38,.85) 0%, rgba(11,22,38,.55) 34%, rgba(11,22,38,0) 56%);
 }
 .hero-copy { position: relative; }
 .hero-night h1 { color: #f3f5f8; max-width: 13ch; font-size: clamp(2.6rem, 5.8vw, 4.6rem); line-height: 1.04; letter-spacing: -0.015em; }
@@ -237,9 +237,9 @@ article .article-head h1 { max-width: none; }
 .hero-night :focus-visible { outline-color: #cfae6d; }
 
 @media (max-width: 760px) {
-  .hero-night { min-height: 0; display: block; padding-top: 0; padding-bottom: 56px; }
+  .hero-night { min-height: 0; display: block; padding-top: 64px; padding-bottom: 260px; }
   .hero-night .chart { position: relative; z-index: -2; display: block; width: 150vw; max-width: none; top: auto; right: auto; left: 50%; transform: translateX(-50%); margin-top: -38vw; margin-bottom: -46vw; }
-  .hero-night::before { background: linear-gradient(180deg, rgba(11,22,38,0) 0%, rgba(11,22,38,0) 26%, rgba(11,22,38,.9) 40%, #0b1626 48%); }
+  .hero-night::before { background: none; }
   .hero-night h1 { max-width: 12ch; }
 }
 
