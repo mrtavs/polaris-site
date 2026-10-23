@@ -45,10 +45,12 @@ const graph = [
     name: 'Polaris Group',
     alternateName: 'Polaris Global',
     url: `${site}/`,
-    logo: `${site}/icon-512.png`,
+    logo: { '@type': 'ImageObject', '@id': `${site}/#logo`, url: `${site}/icon-512.png`, contentUrl: `${site}/icon-512.png`, width: 512, height: 512, caption: 'Polaris Group' },
+    image: { '@type': 'ImageObject', url: `${site}/og.png`, width: 1200, height: 630 },
+    email: 'mailto:marc@bluespheresolutions.co.uk',
     description:
       'Polaris Group focuses on where value is moving in applied AI, carefully selects start ups for private angel investment and convenes the private and public sectors through the Polaris Council.',
-    founder: { '@id': PERSON_ID },
+    founder: { '@id': PERSON_ID, '@type': 'Person', name: 'Marc Taverner', url: 'https://marctaverner.com/' },
     parentOrganization: { '@id': BLUESPHERE_ORG_ID },
     subOrganization: {
       '@type': 'Organization',
