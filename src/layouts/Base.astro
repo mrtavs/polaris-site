@@ -18,7 +18,7 @@ interface Props {
 
 const { title, description, path, extraSchema = [], ogType = 'website', darkHeader = false, noindex = false } = Astro.props;
 // Site wide freshness date: change it whenever page content changes (shown in the footer, used as WebPage dateModified).
-const SITE_UPDATED = '2026-10-23';
+const SITE_UPDATED = '2026-10-24';
 const updated = Astro.props.updated ?? SITE_UPDATED;
 const updatedText = new Date(`${updated}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/London' });
 const OG_BY_PATH: [string, string, string][] = [
